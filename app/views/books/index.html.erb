@@ -1,0 +1,14 @@
+<h1>All Books</h1>
+
+<div id="books">
+<% @books.each do |book| %>
+<span class="book" id=<%="#{book.id}"%> >
+<h3>Title: <%= book.title %></h3>
+<p>Authors: <% book.authors.each do |author| %></p>
+  <p><%= author %></p>
+  <% end %>
+<p>year: <%= book.year %></p>
+<p>pages: <%= book.pages %></p>
+</span>
+<% end %>
+</div>
