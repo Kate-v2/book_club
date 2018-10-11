@@ -1,0 +1,20 @@
+
+<div id="books">
+  <% @books.each do |book| %>
+    <span class="book" id=<%="book-#{book.id}"%>>
+      <h3><%= book.title %></h3>
+      <p><%= book.year %></p>
+        <% book.authors.each.with_index do |author, index| %>
+          <span class="author">
+            <%= if index < book.authors.count-1
+                  author.name + ", "
+                else
+                  author.name
+                end %>
+          </span>
+        <% end %>
+      </p>
+      <p>Pages: <%= book.pages %></p>
+    </span>
+  <% end %>
+</div>
